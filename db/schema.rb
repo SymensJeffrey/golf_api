@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_235728) do
+ActiveRecord::Schema.define(version: 2022_01_12_235913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "scores", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tournament_id"
+    t.string "status"
+    t.integer "hole1"
+    t.integer "hole2"
+    t.integer "hole3"
+    t.integer "hole4"
+    t.integer "hole5"
+    t.integer "hole6"
+    t.integer "hole7"
+    t.integer "hole8"
+    t.integer "hole9"
+    t.integer "front"
+    t.integer "hole10"
+    t.integer "hole11"
+    t.integer "hole12"
+    t.integer "hole13"
+    t.integer "hole14"
+    t.integer "hole15"
+    t.integer "hole16"
+    t.integer "hole17"
+    t.integer "hole18"
+    t.integer "back"
+    t.integer "total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "tournaments", force: :cascade do |t|
     t.string "status"
