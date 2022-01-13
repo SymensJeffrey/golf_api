@@ -8,7 +8,10 @@ class ScoresController < ApplicationController
             render json: [], status: :unauthorized
         end
     end
-
+    def show
+        score = Score.find_by(id: params[:id])
+        render json: score.as_json
+    end
     def create
         score = Score.new(
             user_id:current_user.id,
