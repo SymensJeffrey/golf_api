@@ -45,4 +45,27 @@ class ScoresController < ApplicationController
             render json: { errors: score.errors.full_messages }, status: :bad_request
         end
     end
+    def update
+        score = Score.find_by(id:params[:id])
+        score.hole1 = params[:hole1] || score.hole1
+        score.hole2 = params[:hole2] || score.hole2
+        score.hole3 = params[:hole3] || score.hole3
+        score.hole4 = params[:hole4] || score.hole4
+        score.hole5 = params[:hole5] || score.hole5
+        score.hole6 = params[:hole6] || score.hole6
+        score.hole7 = params[:hole7] || score.hole7
+        score.hole8 = params[:hole8] || score.hole8
+        score.hole9 = params[:hole9] || score.hole9
+        score.hole10 = params[:hole10] || score.hole10
+        score.hole11 = params[:hole11] || score.hole11
+        score.hole12 = params[:hole12] || score.hole12
+        score.hole13 = params[:hole13] || score.hole13
+        score.hole14 = params[:hole14] || score.hole14
+        score.hole15 = params[:hole15] || score.hole15
+        score.hole16 = params[:hole16] || score.hole16
+        score.hole17 = params[:hole17] || score.hole17
+        score.hole18 = params[:hole18] || score.hole18
+        score.save
+        render json: score.as_json
+    end
 end

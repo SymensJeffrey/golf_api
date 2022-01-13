@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "/scores" => "scores#index"
   post "/scores" => "scores#create"
   get "/scores/:id" => "scores#show"
+  patch "/scores/:id" => "scores#update"
 end
