@@ -40,7 +40,7 @@ class ScoresController < ApplicationController
             tournament_id: 0
         )
         if score.save
-            render json: { message: "Score added to workout" }, status: :created
+            render json: { message: "Score created" }, status: :created
         else
             render json: { errors: score.errors.full_messages }, status: :bad_request
         end
