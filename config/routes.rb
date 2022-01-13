@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post "/scores" => "scores#create"
   get "/scores/:id" => "scores#show"
   patch "/scores/:id" => "scores#update"
+
+  post "/tournaments" => "tournaments#create"
 end
