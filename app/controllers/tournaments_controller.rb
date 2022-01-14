@@ -1,5 +1,9 @@
 class TournamentsController < ApplicationController
     skip_before_action :verify_authenticity_token
+    def show
+        tournament = Tournament.find_by(id:params[:id])
+        render json: tournament.as_json
+    end
     def create
         tournament = Tournament.new(
             status: "active",

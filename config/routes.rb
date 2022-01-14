@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/scores/:id" => "scores#show"
   patch "/scores/:id" => "scores#update"
 
+  get "/tournaments/:id" => "tournaments#show"
   post "/tournaments" => "tournaments#create"
   patch "/tournaments/:id" => "tournaments#update"
 end
