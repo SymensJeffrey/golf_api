@@ -2,7 +2,7 @@ class TournamentsController < ApplicationController
     skip_before_action :verify_authenticity_token
     def show
         tournament = Tournament.find_by(id:params[:id])
-        render json: tournament.as_json, include: [scores]
+        render json: tournament.as_json, include: ['scores']
     end
     def create
         tournament = Tournament.new(
