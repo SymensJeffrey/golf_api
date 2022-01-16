@@ -7,7 +7,8 @@ class TournamentsController < ApplicationController
     def create
         tournament = Tournament.new(
             status: "active",
-            token: SecureRandom.hex(3)
+            token: SecureRandom.hex(3),
+            user_id:current_user.id
         )
         if tournament.save
             render json: { message: "Tournament created" }, status: :created
