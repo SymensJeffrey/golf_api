@@ -14,7 +14,8 @@ class TournamentsController < ApplicationController
         tournament = Tournament.new(
             status: "active",
             token: SecureRandom.hex(3),
-            user_id:current_user.id
+            user_id:current_user.id,
+            date: Time.now.strftime("%m/%d/%Y")
         )
         if tournament.save
             render json: { message: "Tournament created" }, status: :created
