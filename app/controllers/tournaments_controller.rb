@@ -18,7 +18,7 @@ class TournamentsController < ApplicationController
             date: Time.now.strftime("%m/%d/%Y")
         )
         if tournament.save
-            render json: { message: "Tournament created" }, status: :created
+            render json: tournament
         else
             render json: { errors: tournament.errors.full_messages }, status: :bad_request
         end
