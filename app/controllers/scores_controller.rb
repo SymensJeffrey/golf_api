@@ -37,8 +37,9 @@ class ScoresController < ApplicationController
             hole18: 0,
             back: 0,
             total: 0,
-            token: params[:token]
-            name: params[:name]
+            token: params[:token],
+            name: params[:name],
+            tournament_id: Tournament.find_by(token: params[:token]).id
         )
         if score.save
             render json: { message: "Score created" }, status: :created
