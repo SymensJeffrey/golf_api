@@ -38,6 +38,7 @@ class ScoresController < ApplicationController
             back: 0,
             total: 0,
             token: params[:token]
+            name: params[:name]
         )
         if score.save
             render json: { message: "Score created" }, status: :created
