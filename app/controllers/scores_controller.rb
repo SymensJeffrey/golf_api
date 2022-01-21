@@ -67,6 +67,7 @@ class ScoresController < ApplicationController
         score.hole16 = params[:hole16] || score.hole16
         score.hole17 = params[:hole17] || score.hole17
         score.hole18 = params[:hole18] || score.hole18
+        score.status = params[:status] || score.status
         score.save
         render json: score.as_json
     end
