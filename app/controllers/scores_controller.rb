@@ -58,6 +58,7 @@ class ScoresController < ApplicationController
         score.hole7 = params[:hole7] || score.hole7
         score.hole8 = params[:hole8] || score.hole8
         score.hole9 = params[:hole9] || score.hole9
+        score.front = score.hole1 + score.hole2 + score.hole3 + score.hole4 + score.hole5 + score.hole6 + score.hole7 + score.hole8 + score.hole9
         score.hole10 = params[:hole10] || score.hole10
         score.hole11 = params[:hole11] || score.hole11
         score.hole12 = params[:hole12] || score.hole12
@@ -67,6 +68,8 @@ class ScoresController < ApplicationController
         score.hole16 = params[:hole16] || score.hole16
         score.hole17 = params[:hole17] || score.hole17
         score.hole18 = params[:hole18] || score.hole18
+        score.back = score.hole10 + score.hole11 + score.hole12 + score.hole13 + score.hole14 + score.hole15 + score.hole16 + score.hole17 + score.hole18
+        score.total = score.front + score.back
         score.status = params[:status] || score.status
         score.save
         render json: score.as_json
