@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "/scores" => "scores#create"
   get "/scores/:id" => "scores#show"
   patch "/scores/:id" => "scores#update"
+  delete "/scores/:id" => "scores#destroy"
 
   get "/tournaments" => "tournaments#index"
   get "/tournaments/:id" => "tournaments#show"

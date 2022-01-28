@@ -74,4 +74,10 @@ class ScoresController < ApplicationController
         score.save
         render json: score.as_json
     end
+
+    def destroy
+        score = Score.find_by(id: params[:id])
+        score.destroy
+        render json: {message: "score successfully destroyed."}
+    end
 end
