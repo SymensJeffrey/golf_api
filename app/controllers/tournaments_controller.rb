@@ -1,8 +1,8 @@
 class TournamentsController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index 
-        tournaments = Tournament.where(status: "active", user_id: current_user.id)
-        render json: tournaments
+        tournaments = Tournament.where(status: "active", user_id: current_user.id).reverse_order
+        render json: tournaments.reverse_order
     end
     
     def show
