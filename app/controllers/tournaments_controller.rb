@@ -30,4 +30,10 @@ class TournamentsController < ApplicationController
         tournament.save
         render json: tournament.as_json
     end
+
+    def destroy
+        tournament = Tournament.find_by(id: params[:id])
+        tournament.destroy
+        render json: {message: "tournament successfully destroyed."}
+    end
 end
