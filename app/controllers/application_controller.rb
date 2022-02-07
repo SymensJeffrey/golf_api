@@ -22,8 +22,4 @@ class ApplicationController < ActionController::Base
           render json: {}, status: :unauthorized
         end
     end
-    
-    def encode_token(user_id)
-      JWT.encode({user_id: user_id}, ENV['SECRET_TOKEN'])
-    end
 end
