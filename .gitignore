@@ -35,6 +35,3 @@
 yarn-debug.log*
 .yarn-integrity
 
-
-development:
-  secret_key_base: de2139e6ee20cd397f8306bcf0fc2d9bfdcb1aa0342b78cc917118ddb16dfac0542b99dbb074aaeb7059485c28d570bbe13f72e96642e4ad77f81fa3d0822b8f
