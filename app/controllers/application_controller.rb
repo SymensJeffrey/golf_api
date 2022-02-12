@@ -22,4 +22,11 @@ class ApplicationController < ActionController::Base
           render json: {}, status: :unauthorized
         end
     end
+    begin
+      data = Base64.strict_decode64(data) # decode data
+      ...
+    rescue ArgumentError => e
+      Rails.logger.warn "Could not decrypt data: #{e}, #{data}"
+      text = ""
+    end
 end
