@@ -26,4 +26,5 @@ class ApplicationController < ActionController::Base
     def encode_token(user_id)
       JWT.encode({user_id: user_id}, ENV['SECRET_TOKEN'])
     end
+    
 end
