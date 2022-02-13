@@ -84,3 +84,4 @@ production:
   database: dddhiaeq9i2394
   username: uhagcygewjaojc
   password: <%= ENV['53e398f501bc292c16c09368dd1277a112b2ceb2f855c20f88b2d2e9c12211a2'] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
