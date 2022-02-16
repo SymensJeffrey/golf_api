@@ -21,8 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-# golf_api
-# golf_api
-# golf_api
-# golf_api
+
