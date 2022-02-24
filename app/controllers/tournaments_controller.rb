@@ -15,7 +15,8 @@ class TournamentsController < ApplicationController
             status: "active",
             token: SecureRandom.hex(3),
             user_id:current_user.id,
-            date: Time.now.strftime("%m/%d/%Y")
+            date: Time.now.strftime("%m/%d/%Y"),
+            course_id: params[:course_id]
         )
         if tournament.save
             render json: tournament
