@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   delete "/tournaments/:id" => "tournaments#destroy"
 
   get "/courses" => "courses#index"
+  post "/courses" => "courses#create"
 end
