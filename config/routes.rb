@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   post "/tournaments" => "tournaments#create"
   patch "/tournaments/:id" => "tournaments#update"
   delete "/tournaments/:id" => "tournaments#destroy"
+
+  get "/courses" => "courses#index"
 end
