@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_002026) do
+ActiveRecord::Schema.define(version: 2022_02_24_015615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.integer "hole1_par"
+    t.integer "hole2_par"
+    t.integer "hole3_par"
+    t.integer "hole4_par"
+    t.integer "hole5_par"
+    t.integer "hole6_par"
+    t.integer "hole7_par"
+    t.integer "hole8_par"
+    t.integer "hole9_par"
+    t.integer "front_par"
+    t.integer "hole10_par"
+    t.integer "hole11_par"
+    t.integer "hole12_par"
+    t.integer "hole13_par"
+    t.integer "hole14_par"
+    t.integer "hole15_par"
+    t.integer "hole16_par"
+    t.integer "hole17_par"
+    t.integer "hole18_par"
+    t.integer "back_par"
+    t.integer "total_par"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "scores", force: :cascade do |t|
     t.integer "user_id"
