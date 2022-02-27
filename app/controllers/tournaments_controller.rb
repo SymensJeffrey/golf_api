@@ -7,7 +7,7 @@ class TournamentsController < ApplicationController
     
     def show
         tournament = Tournament.find_by(id:params[:id])
-        render json: tournament, include: ['scores']
+        render json: tournament, include: ['scores', 'course']
     end
 
     def create
