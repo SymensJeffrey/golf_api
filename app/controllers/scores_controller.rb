@@ -3,7 +3,7 @@ class ScoresController < ApplicationController
     def index
         if current_user
             scores = Score.where(status: "active", user_id: current_user.id)
-            render json: scores.reverse_order
+            render json: scores.reverse_order, include: ['course']
         else
             render json: [], status: :unauthorized
         end
