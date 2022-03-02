@@ -39,7 +39,8 @@ class ScoresController < ApplicationController
             total: 0,
             token: params[:token],
             name: params[:name],
-            tournament_id: Tournament.find_by(token: params[:token]).id
+            tournament_id: Tournament.find_by(token: params[:token]).id,
+            course_id: Tournament.find_by(token: params[:token]).course_id
         )
         if score.save
             render json: { message: "Score created" }, status: :created
