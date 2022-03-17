@@ -2,7 +2,7 @@ class ScoresController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
         if current_user
-            scores = Score.where(status: "active", user_id: current_user.id)
+            scores = Score.where(user_id: current_user.id)
             render json: scores.reverse_order, include: ['course']
         else
             render json: [], status: :unauthorized
