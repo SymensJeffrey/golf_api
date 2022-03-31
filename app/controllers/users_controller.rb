@@ -24,4 +24,13 @@ class UsersController < ApplicationController
         user = current_user
         render json: user
     end
+    
+    def update
+      user = User.find_by(id:params[:id])
+      user.role = params[:role] || user.role
+      user.email = params[:email] || user.email
+      user.name = params[:name] || user.name
+      user.save
+      render json: user.as_json
+    end
 end
