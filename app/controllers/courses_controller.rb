@@ -37,4 +37,9 @@ class CoursesController < ApplicationController
             render json: { errors: course.errors.full_messages }, status: :bad_request
         end
     end
+
+    def show
+        course = Course.find_by(id: params[:id])
+        render json: course.as_json
+    end
 end
