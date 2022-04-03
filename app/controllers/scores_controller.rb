@@ -10,7 +10,7 @@ class ScoresController < ApplicationController
     end
     def show
         score = Score.find_by(id: params[:id])
-        render json: score.as_json
+        render json: score, include: ['course']
     end
     def create
         score = Score.new(
