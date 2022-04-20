@@ -3,7 +3,7 @@ class PasswordResetMailer < ApplicationMailer
 
   def password_reset_email
     @user = params[:user]
-    @url  = 'http://localhost:8080/login'
+    @url  = ENV["PASSWORD_RESET_URL"]
     mail(to: @user.email, subject: 'Password Reset')
   end
 end
