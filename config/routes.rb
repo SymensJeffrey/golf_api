@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   get "/courses" => "courses#index"
   post "/courses" => "courses#create"
   get "/courses/:id" => "courses#show"
+
+  post "/passwords/reset" => "passwords#create"
 end
