@@ -1,5 +1,5 @@
 class PasswordResetMailer < ApplicationMailer
-    default from: 'jeffrey.symens23@gmail.com'
+    default from: ENV["GMAIL_USERNAME"]
 
   def password_reset_email
     @user = params[:user]
