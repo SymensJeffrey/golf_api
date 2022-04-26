@@ -8,4 +8,18 @@ class PasswordsController < ApplicationController
 
         render json: {message: "Password Reset email sent"}
     end
+
+    def update
+        user = User.find_by(reset_password_token: params[:reset_password_token])
+        if user.updated_at < 15.minutes.ago
+            user.password = params[:password]
+            password_confirmation = params[:password_confirmation] 
+            user.save
+        end
+        if user.save
+            render json: { message: "Password Updated successfully" }
+          else
+            render json: { errors: user.errors.full_messages }, status: :bad_request
+        end
+    end
 end

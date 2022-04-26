@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get "/courses/:id" => "courses#show"
 
   post "/passwords/reset" => "passwords#create"
+  patch "passwords/:id" => "passwords#update"
 end
