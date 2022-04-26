@@ -12,11 +12,15 @@ class PasswordsController < ApplicationController
     def update
         user = User.find_by(reset_password_token: params[:reset_password_token])
         user.password = params[:password]
-        user.password_confirmation = params[:password_confirmation] 
-        user.save
+        user.password_confirmation = params[:password_confirmation]
+        if user.updated_at < 15.minutes.ago
+            user.save
+        else
+            user.errors.full_messages << "Password reset token expired"
+        end
         if user.save
             render json: { message: "Password Updated successfully" }
-          else
+        else
             render json: { errors: user.errors.full_messages }, status: :bad_request
         end
     end
