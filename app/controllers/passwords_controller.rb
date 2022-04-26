@@ -11,11 +11,9 @@ class PasswordsController < ApplicationController
 
     def update
         user = User.find_by(reset_password_token: params[:reset_password_token])
-        if user.updated_at < 15.minutes.ago
-            user.password = params[:password]
-            password_confirmation = params[:password_confirmation] 
-            user.save
-        end
+        user.password = params[:password]
+        user.password_confirmation = params[:password_confirmation] 
+        user.save
         if user.save
             render json: { message: "Password Updated successfully" }
           else
