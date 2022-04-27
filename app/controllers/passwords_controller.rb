@@ -13,7 +13,8 @@ class PasswordsController < ApplicationController
         user = User.find_by(reset_password_token: params[:reset_password_token])
         user.password = params[:password]
         user.password_confirmation = params[:password_confirmation]
-        if user.updated_at < 15.minutes.ago
+        puts user.email
+        if user.updated_at < 15.minutes.since
             user.save
         else
             user.errors.full_messages << "Password reset token expired"
