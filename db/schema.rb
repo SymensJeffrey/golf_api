@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 2022_04_28_225359) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "password_reset_sent_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "role"
