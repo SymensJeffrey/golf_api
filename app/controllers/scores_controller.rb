@@ -37,6 +37,7 @@ class ScoresController < ApplicationController
             hole18: 0,
             back: 0,
             total: 0,
+            to_par: "E",
             token: params[:token],
             name: params[:name],
             tournament_id: Tournament.find_by(token: params[:token]).id,
@@ -72,6 +73,7 @@ class ScoresController < ApplicationController
         score.back = score.hole10 + score.hole11 + score.hole12 + score.hole13 + score.hole14 + score.hole15 + score.hole16 + score.hole17 + score.hole18
         score.total = score.front + score.back
         score.status = params[:status] || score.status
+        score.to_par = params[:to_par] || score.to_par
         score.save
         render json: score.as_json
     end
