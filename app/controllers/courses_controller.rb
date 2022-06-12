@@ -42,4 +42,10 @@ class CoursesController < ApplicationController
         course = Course.find_by(id: params[:id])
         render json: course.as_json
     end
+
+    def destroy
+        course = Course.find_by(id: params[:id])
+        course.destroy
+        render json: {message: "course successfully destroyed."}
+    end
 end

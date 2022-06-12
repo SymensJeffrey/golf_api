@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "/courses" => "courses#index"
   post "/courses" => "courses#create"
   get "/courses/:id" => "courses#show"
+  delete "courses/:id" => "courses#destroy"
 
   post "/passwords/reset" => "passwords#create"
   patch "passwords/update" => "passwords#update"
